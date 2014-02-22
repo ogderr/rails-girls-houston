@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mini Posts</title>
+  <title>homestar's homestarmy</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -14,13 +14,24 @@
       <%= link_to "List All Users", users_path %>
     </li>
     <li>
-      <%= link_to "Make New User", new_user_path %>
+      <%= link_to "Make New User", new_user_registration_path %>
+    </li>
+    <li>
+      <%= link_to "Make New Post", new_post_path %>
     </li>
 
   </ul>
 </div>
 
 <div class="page-body">
+
+<% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
+
   <%= yield %>
 </div>
 
